@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F3E8FF;
+}
+
+/* NAVBAR */
+nav.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background: #4C1D95;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    z-index: 1000;
+}
+
+nav.navbar li a {
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav.navbar li a:hover {
+    background: #F9A8D4;
+    color: #4C1D95;
+}
+
+nav.navbar li a.active {
+    background: #C084FC;
+    color: white;
+}
+
+/* WADAH UTAMA */
+.wadah-utama {
+    margin-top: 60px;
+    padding: 20px;
+}
+
+/* HEADER HALAMAN */
+.header-halaman {
+    background-color: #9333EA;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-halaman h1 {
+    color: white;
+    margin: 0 0 10px 0;
+}

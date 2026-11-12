@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Football Fans - Fan Page Klub Sepak Bola</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f6fa;
+    color: #17213a;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #101c36;
+    color: white;
+    padding: 20px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #ffca28;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 22px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #ffca28;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(120deg, #101c36, #174a78);
+    color: white;
+    padding: 90px 8%;
+}
+
+.hero h1 {
+    font-size: 43px;
+    margin-bottom: 18px;
+}
+
+.hero span {
+    color: #ffca28;
+}
+
+.hero p {
+    max-width: 550px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    background: #ffca28;
+    color: #101c36;
+    padding: 12px 22px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: white;
+}
+
+/* SECTION */
+section {
+    padding: 40px 6%;
+}
+
+.section-title {
+    border-left: 6px solid #ffca28;
+    padding-left: 15px;
+    margin-bottom: 25px;
+    font-size: 25px;
+}
+
+/* KLUB */
+.club-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.club-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 3px 10px #ddd;
+}
+
+.club-card .emblem {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.club-card h3 {
+    margin-bottom: 10px;
+}
+
+.club-card p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* PEMAIN */
+.player-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.player-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 3px 10px #ddd;
+}
+
+.player-card h3 {
+    margin-bottom: 15px;
+    color: #174a78;
+}
+
+.player-card ol {
+    padding-left: 25px;
+    line-height: 2;
+}
+
+/* JADWAL */
+.match-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.match-card {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px #ddd;
+    text-align: center;
+}
+
+.match-card h3 {
+    margin-bottom: 12px;
+}
+
+.match {
+    font-size: 19px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.match-card p {
+    margin-bottom: 8px;
+}
+
+/* TROFI */
+.trophy-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.trophy-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 3px 10px #ddd;
+}
+
+.trophy-card .icon {
+    font-size: 45px;
+    margin-bottom: 12px;
+}
+
+.trophy-card h3 {
+    margin-bottom: 12px;
+}
+
+.trophy-card p {
+    line-height: 1.7;
+}
+
+/* FOOTER */
+footer {
+    background: #101c36;
+    color: white;
+    padding: 40px 6% 20px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+footer h2, footer h3 {
+    color: #ffca28;
+    margin-bottom: 15px;
+}
+
+footer p {
+    line-height: 1.7;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer li {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #526078;
+    margin-top: 30px;
+    padding-top: 20px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 800px) {
+    .club-container,
+    .player-container,
+    .trophy-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media(max-width: 500px) {
+    .club-container,
+    .player-container,
+    .trophy-container,
+    .match-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar ul {
+        gap: 12px;
+        font-size: 12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">⚽ FOOTBALL FANS</div>
+
+    <ul>
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#klub">Klub</a></li>
+        <li><a href="#pemain">Pemain</a></li>
+        <li><a href="#jadwal">Jadwal</a></li>
+        <li><a href="#trofi">Sejarah Piala</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="beranda">
+    <h1>
+        Dunia Sepak Bola<br>
+        <span>Football Fans Community</span>
+    </h1>
+
+    <p>
+        Temukan informasi klub sepak bola favoritmu!
+        Kenali susunan pemain utama, lihat jadwal pertandingan,
+        dan jelajahi sejarah kemenangan serta koleksi trofi
+        klub-klub kebanggaan dunia.
+    </p>
+
+    <a href="#klub" class="btn">Jelajahi Klub →</a>
+</header>
+
+<!-- KLUB -->
+<section id="klub">
+    <h2 class="section-title">Klub Sepak Bola Populer</h2>
+
+    <div class="club-container">
+
+        <div class="club-card">
+            <div class="emblem">⚪</div>
+            <h3>Real Madrid</h3>
+            <p>
+                Klub raksasa Spanyol yang terkenal
+                dengan sejarah panjang dan prestasi
+                di kompetisi Eropa.
+            </p>
+            <a href="#pemain" class="btn">Lihat Klub</a>
+        </div>
+
+        <div class="club-card">
+            <div class="emblem">🔴</div>
+            <h3>Manchester United</h3>
+            <p>
+                Klub asal Inggris dengan sejarah
+                panjang, basis suporter besar,
+                dan banyak prestasi.
+            </p>
+            <a href="#pemain" class="btn">Lihat Klub</a>
+        </div>
+
+        <div class="club-card">
+            <div class="emblem">🔵</div>
+            <h3>Persib Bandung</h3>
+            <p>
+                Klub kebanggaan Jawa Barat yang
+                memiliki Bobotoh dan sejarah
+                sepak bola Indonesia.
+            </p>
+            <a href="#pemain" class="btn">Lihat Klub</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- PEMAIN -->
+<section id="pemain">
+    <h2 class="section-title">Susunan Pemain Utama</h2>
+
+    <div class="player-container">
+
+        <div class="player-card">
+            <h3>⚪ Real Madrid (4-3-3)</h3>
+            <ol>
+                <li>Thibaut Courtois (GK)</li>
+                <li>Dani Carvajal (DF)</li>
+                <li>Sergio Ramos (DF)</li>
+                <li>Raphael Varane (DF)</li>
+                <li>Marcelo (DF)</li>
+                <li>Toni Kroos (MF)</li>
+                <li>Luka Modric (MF)</li>
+                <li>Casemiro (MF)</li>
+                <li>Gareth Bale (FW)</li>
+                <li>Karim Benzema (FW)</li>
+                <li>Cristiano Ronaldo (FW)</li>
+            </ol>
+        </div>
+
+        <div class="player-card">
+            <h3>🔴 Manchester United (4-3-3)</h3>
+            <ol>
+                <li>David De Gea (GK)</li>
+                <li>Gary Neville (DF)</li>
+                <li>Rio Ferdinand (DF)</li>
+                <li>Nemanja Vidic (DF)</li>
+                <li>Patrice Evra (DF)</li>
+                <li>Paul Scholes (MF)</li>
+                <li>Roy Keane (MF)</li>
+                <li>David Beckham (MF)</li>
+                <li>Ryan Giggs (FW)</li>
+                <li>Wayne Rooney (FW)</li>
+                <li>Eric Cantona (FW)</li>
+            </ol>
+        </div>
+
+        <div class="player-card">
+            <h3>🔵 Persib Bandung (4-3-3)</h3>
+            <ol>
+                <li>Teja Paku Alam (GK)</li>
+                <li>Henhen Herdiana (DF)</li>
+                <li>Nick Kuipers (DF)</li>
+                <li>Alberto Rodriguez (DF)</li>
+                <li>Rezaldi Hehanussa (DF)</li>
+                <li>Marc Klok (MF)</li>
+                <li>Dedi Kusnandar (MF)</li>
+                <li>Beckham Putra (MF)</li>
+                <li>Ciro Alves (FW)</li>
+                <li>David da Silva (FW)</li>
+                <li>Febri Hariyadi (FW)</li>
+            </ol>
+        </div>
+
+    </div>
+    <p style="margin-top:15px; font-size:13px;">
+        *Susunan pemain merupakan contoh dari beberapa era,
+        bukan susunan resmi atau skuad terbaru.
+    </p>
+</section>
+
+<!-- JADWAL -->
+<section id="jadwal">
+    <h2 class="section-title">Jadwal Pertandingan</h2>
+
+    <div class="match-container">
+
+        <div class="match-card">
+            <h3>⚽ La Liga</h3>
+            <div class="match">
+                Real Madrid vs Barcelona
+            </div>
+            <p>📅 Jadwal mengikuti kalender resmi</p>
+            <p>🏆 Kompetisi: La Liga</p>
+        </div>
+
+        <div class="match-card">
+            <h3>⚽ Premier League</h3>
+            <div class="match">
+                Manchester United vs Liverpool
+            </div>
+            <p>📅 Jadwal mengikuti kalender resmi</p>
+            <p>🏆 Kompetisi: Premier League</p>
+        </div>
+
+        <div class="match-card">
+            <h3>⚽ Liga Indonesia</h3>
+            <div class="match">
+                Persib Bandung vs Persija Jakarta
+            </div>
+            <p>📅 Jadwal mengikuti kalender resmi</p>
+            <p>🏆 Kompetisi: Liga Indonesia</p>
+        </div>
+
+        <div class="match-card">
+            <h3>⚽ Liga Champions</h3>
+            <div class="match">
+                Pertandingan Liga Champions
+            </div>
+            <p>📅 Sesuai jadwal UEFA</p>
+            <p>🏆 Kompetisi: UEFA Champions League</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- SEJARAH TROFI -->
+<section id="trofi">
+    <h2 class="section-title">Sejarah dan Koleksi Trofi</h2>
+
+    <div class="trophy-container">
+
+        <div class="trophy-card">
+            <div class="icon">🏆</div>
+            <h3>Real Madrid</h3>
+            <p>
+                15 Gelar UEFA Champions League
+                hingga tahun 2024.
+            </p>
+            <p>
+                Gelar penting: La Liga,
+                Copa del Rey, dan Liga Champions.
+            </p>
+        </div>
+
+        <div class="trophy-card">
+            <div class="icon">🏆</div>
+            <h3>Manchester United</h3>
+            <p>
+                3 Gelar UEFA Champions League.
+            </p>
+            <p>
+                Gelar penting: Premier League,
+                FA Cup, dan Liga Champions.
+            </p>
+        </div>
+
+        <div class="trophy-card">
+            <div class="icon">🏆</div>
+            <h3>Persib Bandung</h3>
+            <p>
+                Juara kompetisi kasta tertinggi
+                Indonesia pada beberapa era.
+            </p>
+            <p>
+                Prestasi penting: Juara Liga Indonesia
+                1994–1995, 2014, dan 2023–2024.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-container">
+
+        <div>
+            <h2>⚽ FOOTBALL FANS</h2>
+            <p>
+                Satu lapangan, jutaan cerita.
+                Tempat berkumpulnya para penggemar
+                sepak bola dari berbagai klub.
+            </p>
+        </div>
+
+        <div>
+            <h3>Navigasi</h3>
+            <ul>
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#klub">Klub</a></li>
+                <li><a href="#pemain">Susunan Pemain</a></li>
+                <li><a href="#jadwal">Jadwal Pertandingan</a></li>
+                <li><a href="#trofi">Sejarah Piala</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Komunitas Suporter</h3>
+            <p>Instagram | Facebook | TikTok</p>
+            <p>Email: footballfans@example.com</p>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        <p>
+            © 2026 Football Fans.
+            Semua Hak Cipta Dilindungi.
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
